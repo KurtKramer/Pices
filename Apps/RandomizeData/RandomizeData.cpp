@@ -888,7 +888,7 @@ void  DisplayCmdLineParameters (ostream*  r)
      << "=================================" << endl
      << endl;
   
-  *r << "RunDate            [" << osGetLocalDateTime ()                 << "]"  << endl;
+  *r << "RunDate            [" << osGetDateTimeLocal ()                 << "]"  << endl;
   *r << "DataFile           [" << inputFileName                         << "]"  << endl;
   *r << "DataFileTimeStamp  [" << osGetFileDateTime (inputFileName)     << "]"  << endl;
   *r << "Format             [" << inputFormat->DriverName ()            << "]"  << endl;

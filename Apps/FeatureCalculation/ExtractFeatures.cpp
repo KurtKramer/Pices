@@ -555,7 +555,7 @@ void  ExtractFeatures::ClassifyImages ()
   double   probability;
   double   breakTie;
 
-  DateTime  classificationStartTime = osGetLocalDateTime ();
+  DateTime  classificationStartTime = osGetDateTimeLocal ();
   double    startCPUsecs = osGetSystemTimeUsed ();
 
 
@@ -593,7 +593,7 @@ void  ExtractFeatures::ClassifyImages ()
       cout << "Number of Images Classified[" << c << "]" << endl;
   }
 
-  DateTime  classificationEndTime = osGetLocalDateTime ();
+  DateTime  classificationEndTime = osGetDateTimeLocal ();
   double    endCPUsecs  = osGetSystemTimeUsed ();
   double    cpuSecsUsed = endCPUsecs - startCPUsecs;
 

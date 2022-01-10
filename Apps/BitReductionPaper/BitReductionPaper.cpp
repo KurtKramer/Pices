@@ -1310,7 +1310,7 @@ int  BitReductionPaper::Main (int  argc,  char** argv)
 
   ReportCmdLineParameters ();
 
-  startTime = osGetLocalDateTime ();
+  startTime = osGetDateTimeLocal ();
   
   *reportFile << "Start Time[" << startTime << "]." << endl << endl;
 
@@ -1336,7 +1336,7 @@ int  main (int    argc,
   //  _CrtSetDbgFlag ( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF ); 
   #endif
 
-  TimeType t = osGetLocalDateTime ().Time ();
+  TimeType t = osGetDateTimeLocal ().Time ();
 
   
   long  processorId = osGetProcessId ();

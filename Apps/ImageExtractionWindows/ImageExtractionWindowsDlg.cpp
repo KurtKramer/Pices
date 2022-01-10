@@ -352,7 +352,7 @@ void CImageExtractionWindowsDlg::OnCancel()
     if  (multiThreadedExtractionManager)
       multiThreadedExtractionManager->TerminateProcessing (0);
 
-    cancelRequestStartTime = osGetLocalDateTime ();
+    cancelRequestStartTime = osGetDateTimeLocal ();
   }
   else
   {
@@ -513,7 +513,7 @@ void  CImageExtractionWindowsDlg::OnTimerMultiThreaded ()
 
   if  (multiThreadedExtractionManager->CancelFlag  ()  &&  (!multiThreadedExtractionManager->DoneExecuting ()))
   {
-    DateTime now = osGetLocalDateTime ();
+    DateTime now = osGetDateTimeLocal ();
     DateTime elaspedTime = now - cancelRequestStartTime;
 
     kkuint64  secsWeHaveBeenWaitingForCancel = elaspedTime.Seconds ();

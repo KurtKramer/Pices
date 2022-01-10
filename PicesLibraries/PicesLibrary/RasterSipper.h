@@ -166,7 +166,8 @@ namespace MLL
     ~RasterSipper ();
 
 
-    kkMemSize  MemoryConsumedEstimated ()  const;
+    virtual
+    size_t  MemoryConsumedEstimated ()  const;
 
     
     ///<summary> Turn an instance of &quot;Raster&quot; into &quot;RasterSipper&quot;. </summary>

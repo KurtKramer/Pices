@@ -77,7 +77,7 @@ InstrumentDataManager::InstrumentDataManager (const KKStr&   _sipperFileName,
     // Place Initial Header Lines
 
     *compReport << "// Comprehensive Instrument Data"                << endl
-                << "// Date"        << "\t" << osGetLocalDateTime () << endl
+                << "// Date"        << "\t" << osGetDateTimeLocal () << endl
                 << "// SipperFile"  << "\t" << sipperFileName  << "\t" << "TimeStamp"   << "\t" << osGetFileDateTime (sipperFileName) << endl
                 << "//" << endl;
 

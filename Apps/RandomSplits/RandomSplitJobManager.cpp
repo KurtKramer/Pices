@@ -184,7 +184,7 @@ void  RandomSplitJobManager::GenerateFinalResultsReport ()
   ofstream f (reportFileName.Str ());
 
   f << "Run Time Parameters" << endl
-    << "Run Time"          << "\t" << osGetLocalDateTime ()  << endl
+    << "Run Time"          << "\t" << osGetDateTimeLocal ()  << endl
     << "configFileName"    << "\t" << configFileName         << endl
     << "DataFileName"      << "\t" << dataFileName           << endl
     << "Format"            << "\t" << format->DriverName ()  << endl
@@ -358,7 +358,7 @@ void  RandomSplitJobManager::GenerateFinalResultsReport ()
 void  RandomSplitJobManager::StatusFileInitialize (ostream& o)
 {
   o << "//  RandomSplitJobManager"                        << endl
-    << "//  Initialized  " << osGetLocalDateTime ()       << endl
+    << "//  Initialized  " << osGetDateTimeLocal ()       << endl
     << endl
     << "ConfigFileName"    << "\t" << configFileName                     << endl
     << "DataFileName"      << "\t" << dataFileName                       << endl

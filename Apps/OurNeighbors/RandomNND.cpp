@@ -210,7 +210,7 @@ void	RandomNND::GenerateReport ()
 
   double  avgTotal = 0.0f;
 
-  report << "Run Date/Time     [" << osGetLocalDateTime ()  << "]" << endl;
+  report << "Run Date/Time     [" << osGetDateTimeLocal ()  << "]" << endl;
   report << "Scan Lines        [" << scanLines              << "]" << endl;
   report << "Particles         [" << numOfParticles         << "]" << endl;
   report << "NumOfBuckets      [" << numOfBuckets           << "]" << endl;

@@ -484,7 +484,7 @@ void   AbundanceCorrectionStatsBuilder::Main ()
 
   if  (reportFileName.Empty ())
   {
-    DateTime  d = osGetLocalDateTime ();
+    DateTime  d = osGetDateTimeLocal ();
     KKStr  reportDir = osAddSlash (PicesVariables::ReportDir ()) + "AbundanceAdjustments";
     osCreateDirectoryPath (reportDir);
     if  (configFileName.Empty ())

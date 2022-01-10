@@ -180,7 +180,7 @@ void  ClassSummaryList::SaveLLoydsBinsData (const KKStr&  fileName,
 
   o << "//  LLoyds Bins  Data"                              << endl
     << "//"                                                 << endl
-    << "// Run Date      [" << osGetLocalDateTime () << "]"   << endl
+    << "// Run Date      [" << osGetDateTimeLocal () << "]"   << endl
     << "// SrcDir        [" << srcDirName            << "]"   << endl
     << "// LastScanLin   [" << lastScanLine          << "]"   << endl
     << "// Base Bin Size [" << baseLLoydsBinSize     << "]"   << endl

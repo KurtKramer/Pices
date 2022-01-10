@@ -322,7 +322,7 @@ void  RandomSearch::InitalizeApplication (kkint32 argc, char** argv)
 
   *resultFile << "//" << endl
     << "//" << endl
-    << "// Date and Time      [" << osGetLocalDateTime () << "]" << endl
+    << "// Date and Time      [" << osGetDateTimeLocal () << "]" << endl
     << "// Data File Name     [" << dataFileName << "]" << endl
     << "// Test File Name     [" << testFileName << "]" << endl
     << "// FileFormat         [" << fileFormat->DriverName () << "]" << endl

@@ -332,7 +332,7 @@ void  ExtractionManager::Initialize (bool&  _successful)
 
   completionStatus = "Starting";
 
-  startTime    = osGetLocalDateTime ();
+  startTime    = osGetDateTimeLocal ();
   startCPUsecs = osGetSystemTimeUsed ();
 
   if  (parms.UpdateDataBase ())
@@ -360,7 +360,7 @@ void  ExtractionManager::Initialize (bool&  _successful)
 
   sipperRootName = osGetRootName (parms.SipperFileName ());
 
-  DateTime  now = osGetLocalDateTime ();
+  DateTime  now = osGetDateTimeLocal ();
   KKStr  validationInfoDir = PicesVariables::ValidationInfoDir ();
   osCreateDirectoryPath (validationInfoDir);
   validationInfoFileName        = osAddSlash (validationInfoDir) + sipperRootName + "_ValidationInfo.txt";
@@ -612,7 +612,7 @@ void  ExtractionManager::StartFrameProcessor (bool&  threadStartedSuccessfully)
 
   if  (!threadStartedSuccessfully)
   {
-    KKStr  msg (128);
+    KKStr  msg (128u);
     msg << "StartFrameProcessor   ***ERROR***    Failed to create Thread Instance[" << threadName << "].";
     msgQueue->AddMsg (msg);
     log.Level (-1) << endl << "ExtractionManager::" << msg << endl << endl;
@@ -1053,7 +1053,7 @@ void  ExtractionManager::ManageTheExtraction (bool&  successful)
   if  ((!cancelFlag) &&  (imageManager != NULL))
     imageManager->Flush ();
 
-  endTime     = osGetLocalDateTime  ();
+  endTime     = osGetDateTimeLocal  ();
   endCPUsecs  = osGetSystemTimeUsed ();
 
   GenerateReport ();
@@ -1286,7 +1286,7 @@ void  ExtractionManager::GenerateReport ()
     KKStr  depthReportFileName = osRemoveExtension (parms.ReportFileName ()) + "_Depth.txt";
     ofstream depthReport (depthReportFileName.Str ());
     depthReport << "Command Line [" << parms.CmdLine      () << "]" << endl;
-    depthReport << "Date         [" << osGetLocalDateTime () << "]" << endl << endl;
+    depthReport << "Date         [" << osGetDateTimeLocal () << "]" << endl << endl;
     imageManager->ReportStatsByDepth (depthReport, scanLinesPerMeterDepth);
     depthReport.close ();
     delete  scanLinesPerMeterDepth;  scanLinesPerMeterDepth = NULL;

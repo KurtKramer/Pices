@@ -264,9 +264,9 @@ namespace PicesInterface
     Classifier2Ptr                classifier;
     MLClassListPtr                classes;
     PicesTrainingConfigurationPtr config;
-    double**                                                                                                          crossProbTable;
+    double**                      crossProbTable;
     int                           crossProbTableNumClasses;
-    kkMemSize                     curMemoryPressure;
+    size_t                        curMemoryPressure;
     List<String^>^                errorMsgs;     /**< Error messages for later recall are added to this list. */
     bool                          loadTrainingLibraryRunning;
     System::String^               modelName;

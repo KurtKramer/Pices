@@ -36,7 +36,7 @@ KKStr  PicesKKStr::SystemStringToKKStr (System::String^  s)
   if  (s == nullptr)
     return KKStr::EmptyStr ();
 
-  KKB::KKStr  kkStr (s->Length);
+  KKB::KKStr  kkStr (scUINT32 (s->Length));
   for  (int x = 0;  x < s->Length;  x++)
     kkStr.Append ((char)s[x]);
   return  kkStr;
@@ -48,7 +48,7 @@ KKStrPtr  PicesKKStr::SystemStringToKKStrPtr (System::String^  s)
   if  (s == nullptr)
     return new KKStr ();
 
-  KKB::KKStrPtr  kkStr = new KKStr (s->Length);
+  KKB::KKStrPtr  kkStr = new KKStr (scUINT32 (s->Length));
   for  (int x = 0;  x < s->Length;  x++)
     kkStr->Append ((char)s[x]);
   return  kkStr;

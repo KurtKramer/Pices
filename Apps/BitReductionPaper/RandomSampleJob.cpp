@@ -756,7 +756,7 @@ void  RandomSampleJobList::Save ()
     exit (-1);
   }
 
-  statusFile << "// DateWritten  [" << osGetLocalDateTime () << "]" << endl
+  statusFile << "// DateWritten  [" << osGetDateTimeLocal () << "]" << endl
              << "//" << endl;
 
   int  x;

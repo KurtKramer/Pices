@@ -400,7 +400,7 @@ void   FullSizeImagesInstall::Main ()
 
     KKStr  reportDir = osAddSlash (PicesVariables::ReportDir ()) + "FullSizeImagesInstall";
     osCreateDirectoryPath (reportDir);
-    reportFileName = osAddSlash (reportDir) + "FullSizeImagesInstall_" + osGetLocalDateTime ().YYYYMMDDHHMMSS () + ".txt";
+    reportFileName = osAddSlash (reportDir) + "FullSizeImagesInstall_" + osGetDateTimeLocal ().YYYYMMDDHHMMSS () + ".txt";
   }
 
   report = new ofstream (reportFileName.Str ());

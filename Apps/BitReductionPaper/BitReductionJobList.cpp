@@ -1056,7 +1056,7 @@ void  BitReductionJobList::Save ()
     exit (-1);
   }
 
-  jobFile << "// DateWritten  [" << osGetLocalDateTime () << "]" << endl
+  jobFile << "// DateWritten  [" << osGetDateTimeLocal () << "]" << endl
           << "//" << endl;
 
   jobFile << "NextJobId"        << "\t" << nextJobId        << endl;
@@ -1070,7 +1070,6 @@ void  BitReductionJobList::Save ()
   
   jobFile.close ();
 }  /* Save */
-
 
 
 

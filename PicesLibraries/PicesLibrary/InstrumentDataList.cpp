@@ -384,7 +384,7 @@ void  InstrumentDataList::Save (const KKStr&  fileName,
   o << "//  InstrumentData"    << endl
     << "//  SipperFileName: "  << sipperFileName        << endl
     << "//  SaveFileName  : "  << fileName              << endl
-    << "//  DateSaved     : "  << osGetLocalDateTime () << endl
+    << "//  DateSaved     : "  << osGetDateTimeLocal () << endl
     << "//  ScanRate      : "  << scanRate              << endl
     << "//  Num of Entries: "  << QueueSize ()          << endl
     << "//"                                             << endl;

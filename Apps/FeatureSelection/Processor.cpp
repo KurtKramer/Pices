@@ -166,7 +166,7 @@ Processor::Processor (FeatureSelectionPtr  _featureSelection,
       << "//" << endl
       << "// New Processor Object." << endl
       << "// Processor Id[" << this->procId          << "]" << endl
-      << "// Date/Time   [" << osGetLocalDateTime () << "]." << endl
+      << "// Date/Time   [" << osGetDateTimeLocal () << "]." << endl
       << "//"                                        << endl
       << "// Config Parameters[" << config->ModelParameterCmdLine () << "]" << endl
       << "//" << endl;
@@ -390,7 +390,7 @@ Processor::Processor (FeatureSelectionPtr  _featureSelection,
       << "//" << endl
       << "// New Processor Object." << endl
       << "// Process Id[" << procId                << "]" << endl
-      << "// Date/Time [" << osGetLocalDateTime () << "]." << endl
+      << "// Date/Time [" << osGetDateTimeLocal () << "]." << endl
       << "//"                                         << endl
       << "// Config Parameters[" << config->ModelParameterCmdLine () << "]" << endl
       << "//" << endl;
@@ -1081,7 +1081,7 @@ void  Processor::WriteStatusFile ()
 
   ofstream*  statusFile = OpenStatusFile (ios::out);
 
-  *statusFile << "// Date/Time [" << osGetLocalDateTime ()                                << "]" << endl
+  *statusFile << "// Date/Time [" << osGetDateTimeLocal ()                                << "]" << endl
               << "//"                                                                            << endl
               << "// Status File for Classes["  << Class1Name () << ", " << Class2Name () << "]" << endl
               << "//"                                                                            << endl
@@ -1102,7 +1102,7 @@ void  Processor::WriteStatusFile ()
               << "HighGrade"                      << "\t" << highGrade                         << endl
               << "ExpSinceHighGrade"              << "\t" << expansionsSinceHighGrade          << endl
               << "FirstJobAvailableForExpansion"  << "\t" << firstJobAvailableForExpansion     << endl
-              << "CurrentDateTime"                << "\t" << osGetLocalDateTime ()             << endl;
+              << "CurrentDateTime"                << "\t" << osGetDateTimeLocal ()             << endl;
 
   WriteStatusFileBestParmValues (*statusFile);
   WriteStatusFileGrowthRates (*statusFile);
@@ -1160,7 +1160,7 @@ void  Processor::ReportCpuTimeUsed (ofstream* statusFile)
               << "HostName"        << "\t" << featureSelection->HostName ()
               << endl;
 
-  *statusFile << "CurrentDateTime" << "\t" << osGetLocalDateTime () << endl;
+  *statusFile << "CurrentDateTime" << "\t" << osGetDateTimeLocal () << endl;
 }  /* ReportCpuTimeUsed */
 
 
@@ -1841,7 +1841,7 @@ void  Processor::ProcessGridSearchExpansionBruitForce (ofstream*  statusFile,
 {
   *statusFile << "//" << endl
               << "//  Grid Expansion Bruit-Force  [" << numOfExpansions << "]"  << endl
-              << "//  Current Date/Time           [" << osGetLocalDateTime () << "]"  << endl
+              << "//  Current Date/Time           [" << osGetDateTimeLocal () << "]"  << endl
               << "//" << endl;
 
 
@@ -1895,7 +1895,7 @@ void  Processor::ProcessGridSearchExpansionUsfCasCor (ofstream*  statusFile,
 {
   *statusFile << "//" << endl
               << "//  Grid Expansion Most Accurate  [" << numOfExpansions       << "]"  << endl
-              << "//  Current Date/Time             [" << osGetLocalDateTime () << "]"  << endl
+              << "//  Current Date/Time             [" << osGetDateTimeLocal () << "]"  << endl
               << endl;
 
   numJobsCreated = 0;
@@ -1936,7 +1936,7 @@ void  Processor::ProcessGridSearchExpansionMostAccurate (ofstream*  statusFile,
 
   *statusFile << "//" << endl
               << "//  Grid Expansion Most Accurate  [" << numOfExpansions       << "]"  << endl
-              << "//  Current Date/Time             [" << osGetLocalDateTime () << "]"  << endl
+              << "//  Current Date/Time             [" << osGetDateTimeLocal () << "]"  << endl
               << endl;
 
   numJobsCreated = 0;
@@ -2204,7 +2204,7 @@ void  Processor::ProcessGridSearchExpansionFastestFromBest (ofstream*  statusFil
 
   *statusFile << "//" << endl
               << "//  Grid Expansion    [" << numOfExpansions       << "]"  << endl
-              << "//  Current Date/Time [" << osGetLocalDateTime () << "]"  << endl
+              << "//  Current Date/Time [" << osGetDateTimeLocal () << "]"  << endl
               << "//" << endl;
 
   numJobsCreated = 0;
@@ -2575,7 +2575,7 @@ void  Processor::GenerateFinalResultsReport ()
   log.Level (10) << "Processor::GenerateFinalResultsReport" << endl;
   ofstream r (resultFileName.Str ());
   
-  r << "Current Time     [" << osGetLocalDateTime ()                                             << "]" << endl
+  r << "Current Time     [" << osGetDateTimeLocal ()                                             << "]" << endl
     << "Class1           [" << Class1Name ()                                                     << "]" << endl
     << "Class2           [" << Class2Name ()                                                     << "]" << endl
     << "Model Type       [" << config->ModelTypeStr ()                                           << "]" << endl
@@ -2688,7 +2688,7 @@ void  Processor::GenerateFinalResultsReportHTML ()
     << "<h1>Run Time Parameters</h1>"                                     << endl
     << "<table align=\"center\" border=\"2\" cellpadding=\"4\">"          << endl
     << "<caption>" << captionStr << "</caption>"                          << endl
-    << "<tr><td>Run Time</td>"          << "<td>" << osGetLocalDateTime ()                                    << "</td></tr>" << endl
+    << "<tr><td>Run Time</td>"          << "<td>" << osGetDateTimeLocal ()                                    << "</td></tr>" << endl
     << "<tr><td>Search Type</td>"       << "<td>" << SearchTypeToStr (searchType)                             << "</td></tr>" << endl
     << "<tr><td>Class1</td>"            << "<td>" << class1Name                                               << "</td></tr>" << endl
     << "<tr><td>Class2</td>"            << "<td>" << class2Name                                               << "</td></tr>" << endl

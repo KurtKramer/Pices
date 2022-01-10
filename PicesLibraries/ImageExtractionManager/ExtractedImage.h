@@ -39,7 +39,7 @@ namespace  ImageExtractionManager
 
     ~ExtractedImage ();
 
-    kkMemSize  MemoryConsumedEstimated ()  const;
+    size_t              MemoryConsumedEstimated () const;
 
     kkuint64            ByteOffsetFirstScanRow () const  {return byteOffsetFirstScanRow;}
     float               Depth                  () const  {return depth;}
@@ -100,7 +100,7 @@ namespace  ImageExtractionManager
 
     ~ExtractedImageQueue ();
 
-    kkMemSize  MemoryConsumedEstimated ()  const;
+    size_t  MemoryConsumedEstimated ()  const;
 
     void  AddExtractedImage (ExtractedImagePtr  extractedImage);
 

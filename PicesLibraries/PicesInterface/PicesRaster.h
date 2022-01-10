@@ -184,7 +184,7 @@ namespace PicesInterface
 
   private:
      RasterSipperPtr  raster;
-     kkMemSize        memoryPressure;
+     size_t           memoryPressure;
   };  /* PicesRaster */
 
 

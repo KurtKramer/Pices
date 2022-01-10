@@ -744,7 +744,7 @@ void  BitReductionJob::EvaluateRandomSample (TrainingConfigurationPtr  config,
   redPostCount   = 0;
   redRatio       = 1.0;
   testStat       = 0.0;
-  runTime        = osGetLocalDateTime ();
+  runTime        = osGetDateTimeLocal ();
 
   delete  jobs;
 
@@ -765,7 +765,7 @@ void  BitReductionJob::EvaluateRandomSplit (TrainingConfigurationPtr  _config,
 
   status = brStarted;
 
-  runTime = osGetLocalDateTime ();
+  runTime = osGetDateTimeLocal ();
 
   TrainingConfigurationPtr config = new TrainingConfiguration (*_config);
 
@@ -881,7 +881,7 @@ void  BitReductionJob::EvaluateRandomSplit (TrainingConfigurationPtr  _config,
     }
   }
 
-  runTime = osGetLocalDateTime ();
+  runTime = osGetDateTimeLocal ();
 
   delete  config;        config       = NULL;
   status = brDone;
@@ -905,7 +905,7 @@ void  BitReductionJob::EvaluteNode (TrainingConfigurationPtr  _config,
 
   status = brStarted;
 
-  runTime = osGetLocalDateTime ();
+  runTime = osGetDateTimeLocal ();
 
   TrainingConfigurationPtr config = new TrainingConfiguration (*_config);
 
@@ -981,7 +981,7 @@ void  BitReductionJob::EvaluteNode (TrainingConfigurationPtr  _config,
     // Random Splits Job
   }
 
-  runTime = osGetLocalDateTime ();
+  runTime = osGetDateTimeLocal ();
 
   delete  config;        config       = NULL;
   status = brDone;

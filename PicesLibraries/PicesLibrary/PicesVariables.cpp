@@ -261,7 +261,7 @@ KKStr  PicesVariables::LatitudeToStr  (double latitude)
   double  latitudeDegrees = 0.0;
   double  latitudeMinutes = modf (latitude, &latitudeDegrees) * 60.0;
 
-  KKStr  latStr (12);
+  KKStr  latStr (12u);
   latStr << StrFormatInt ((int)latitudeDegrees, "00") 
          << ":"
          << StrFormatDouble (latitudeMinutes, "#00.0000")
@@ -289,7 +289,7 @@ KKStr  PicesVariables::LongitudeToStr  (double longitude)
   double  longitudeDegrees = 0.0;
   double  longitudeMinutes = modf (longitude, &longitudeDegrees) * 60.0;
 
-  KKStr  longStr (12);
+  KKStr  longStr (12u);
   longStr << StrFormatInt ((int)longitudeDegrees, "##0")
     << ":" 
     << StrFormatDouble (longitudeMinutes, "#00.0000")

@@ -196,7 +196,7 @@ void  ImageSizeDistribution::AddIn (const ImageSizeDistribution&  right,
 {
   if  (numSizeBuckets != right.numSizeBuckets)
   {
-    KKStr  errMsg (128);
+    KKStr  errMsg (scUINT32 (128));
     errMsg << "ImageSizeDistribution::AddIn   ***ERROR***  SizeBuckets Difference   left[" << numSizeBuckets << "]  right[" << right.numSizeBuckets << "].";
     log.Level (-1) << endl << errMsg << endl << endl;
     throw KKException (errMsg);
@@ -204,7 +204,7 @@ void  ImageSizeDistribution::AddIn (const ImageSizeDistribution&  right,
 
   if  (this->numSizeBuckets != right.numSizeBuckets)
   {
-    KKStr  errMsg (128);
+    KKStr  errMsg (scUINT32 (128));
     errMsg << "ImageSizeDistribution::AddIn   ***ERROR***  SizeBuckets Difference   left[" << numSizeBuckets << "]  right[" << right.numSizeBuckets << "].";
     log.Level (-1) << endl << errMsg << endl << endl;
     throw KKException (errMsg);

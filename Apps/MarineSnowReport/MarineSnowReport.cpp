@@ -297,7 +297,7 @@ DeploymentSummary*  MarineSnowReportDeployment (SipperDeploymentPtr  deployment,
        << "Deployment"               << "\t" << deployment->DeploymentNum () << endl
        << "  CTD Time (Start-End)*1" << "\t" << deploymentTimes->ctdDateTimeStart << "\t" << deploymentTimes->ctdDateTimeEnd << endl
        << "  UTC Time (Start-End)"   << "\t" << deploymentTimes->utcDateTimeStart << "\t" << deploymentTimes->utcDateTimeEnd << endl
-       << "DateTime Report Ran"      << "\t" << osGetLocalDateTime ()        << endl
+       << "DateTime Report Ran"      << "\t" << osGetDateTimeLocal ()        << endl
        << "DataBase"                 << "\t" << db.ServerDescription ()      << endl
        << "ProgName"                 << "\t" << osGetProgName ()             << endl
        << "BuildTime"                << "\t" << __DATE__ << " " << __TIME__  << endl
@@ -575,7 +575,7 @@ void  PrintSummaryReports (DataBasePtr                  db,
 
   KKStr svnVersionStr = QUOTE (_SVNVERSION_);
 
-  r  << "DateTime"   << "\t" << osGetLocalDateTime ()        << endl
+  r  << "DateTime"   << "\t" << osGetDateTimeLocal ()        << endl
      << "DataBase"   << "\t" << db->ServerDescription ()     << endl
      << "ProgName"   << "\t" << osGetProgName ()             << endl
      << "BuildTime"  << "\t" << __DATE__ << " " << __TIME__  << endl
@@ -692,8 +692,8 @@ void  MarineSnowReport (const KKStr&  statistic)
   else
     statisticStr = "Volume";
 
-  marineSnowReportDirectory = osAddSlash (osAddSlash (PicesVariables::ReportDir ()) + "MarineSnowReports") + KKB::osGetLocalDateTime ().Date ().YYYYMMDD () + "_" + statisticStr;
-  //marineSnowReportDirectory = "D:\\Users\\kkramer\\DropBox\\Dropbox\\USF_OilSpillGroup\\MarineSnow_" + KKB::osGetLocalDateTime ().Date ().YYYYMMDD ();
+  marineSnowReportDirectory = osAddSlash (osAddSlash (PicesVariables::ReportDir ()) + "MarineSnowReports") + KKB::osGetDateTimeLocal ().Date ().YYYYMMDD () + "_" + statisticStr;
+  //marineSnowReportDirectory = "D:\\Users\\kkramer\\DropBox\\Dropbox\\USF_OilSpillGroup\\MarineSnow_" + KKB::osGetDateTimeLocal ().Date ().YYYYMMDD ();
   KKB::osCreateDirectoryPath (marineSnowReportDirectory);
 
   vector<DeploymentSummary*>  summaries;

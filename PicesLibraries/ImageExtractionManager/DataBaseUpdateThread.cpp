@@ -135,7 +135,7 @@ void  DataBaseUpdateThread::Run ()
     if  (!dbConn->Valid ())
     {
       Crashed (true);
-      KKStr  msg (100);
+      KKStr  msg (100u);
       msg << "Run     Failed to connect to database;  Error[" << dbConn->LastErrorDesc () << "].";
       Status (ThreadStatus::Stopped);
       return;
@@ -184,7 +184,7 @@ void  DataBaseUpdateThread::Run ()
         DuplicateImagePtr  dupImages = dupImageDetector->AddSingleExample (featureVector);
         if  (dupImages)
         {
-          KKStr  msg (100);
+          KKStr  msg (100u);
           msg << "DataBaseUpdateThread::Run   Duplicate Image Detected[" << featureVector->ExampleFileName () << "].";
           AddMsg (msg);
           imageIsDuplicate = true;
@@ -263,7 +263,7 @@ void  DataBaseUpdateThread::Run ()
           {
             imageUpdated = false;
             updateFailures++;
-            KKStr  msg (100);
+            KKStr  msg (100u);
             msg << "DataBaseUpdateThread::Run    ***ERROR***   ImageInsert Failed   ErrorMessage[" 
                 << dbConn->LastErrorDesc () << "]";
             AddMsg (msg);
@@ -275,7 +275,7 @@ void  DataBaseUpdateThread::Run ()
             {
               imageUpdated = false;
               updateFailures++;
-              KKStr  msg (100);
+              KKStr  msg (100u);
               msg << "DataBaseUpdateThread::Run    ***ERROR***   FeatureDataInsertRow Failed   ErrorMessage[" 
                   << dbConn->LastErrorDesc () << "]";
               AddMsg (msg);
