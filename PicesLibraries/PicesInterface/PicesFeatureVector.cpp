@@ -433,7 +433,7 @@ namespace  PicesInterface
   {
     KKStr  fullFileName = PicesKKStr::SystemStringToKKStr (_fullFileName);
 
-    KKStr  sipperFileName (30);
+    KKStr  sipperFileName (30u);
     uint   scanLineNum;
     uint   scanColNum;
 
@@ -457,7 +457,7 @@ namespace  PicesInterface
   {
     KKStr  fullFileName = PicesKKStr::SystemStringToKKStr (_fullFileName);
 
-    KKStr  sipperFileName (64);
+    KKStr  sipperFileName (64u);
     uint   scanLine;
     uint   scanCol;
 

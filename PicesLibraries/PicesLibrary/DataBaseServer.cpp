@@ -114,7 +114,7 @@ void  DataBaseServer::ParseParameterStr (const  KKStr&  parameterStr)
 
 KKStr  DataBaseServer::ToParameterStr ()  const
 {
-  KKStr   parameterStr (1024);
+  KKStr   parameterStr (scUINT32 (1024));
 
   parameterStr = "Description:"   + description                     + "\t"  +
                  "Embedded:"      + (embedded ? "Yes" : "No")       + "\t"  +
@@ -188,7 +188,7 @@ void  DataBaseServerList::WriteConfigFile ()  const
 
   o << "//  PICES  MySQL  configuration file.  There will be one entry for each known MySQL database server." << std::endl
     << "//"  << std::endl
-    << "//   Date Written: " << osGetLocalDateTime () << std::endl
+    << "//   Date Written: " << osGetDateTimeLocal () << std::endl
     << "//"  << std::endl
     << "//  Number Entries: " << QueueSize () << std::endl
     << "//" << std::endl;

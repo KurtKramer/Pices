@@ -33,7 +33,7 @@ SipperFile::SipperFile (const KKStr&  _sipperFileName):
    description             (),
    latitude                (),
    longitude               (),
-   dateTimeStart           (osGetLocalDateTime ()),
+   dateTimeStart           (osGetDateTimeLocal ()),
    sp0                     (NULL),
    sp1                     (NULL),
    sp2                     (NULL),
@@ -131,7 +131,7 @@ KKStr  SipperFile::Sp3ShortName  () const
 
 KKStr  SipperFile::ToTabDelStr ()  const
 {
-  KKStr  r (1024);
+  KKStr  r (1024u);
   r         << "SipperFileId"    << "\t" << sipperFileId
     << "\t" << "SipperFileName"  << "\t" << sipperFileName
     << "\t" << "CruiseName"      << "\t" << cruiseName
@@ -579,7 +579,7 @@ void  SipperFileList::Save (const KKStr&  fileName)
   ofstream  o (fileName.Str ());
 
   o << "// SipperFileList::Save" << endl
-    << "// Date  [" << osGetLocalDateTime () << "]" << endl
+    << "// Date  [" << osGetDateTimeLocal () << "]" << endl
     << "// Count [" << QueueSize ()          << "]" << endl
     << endl;
 

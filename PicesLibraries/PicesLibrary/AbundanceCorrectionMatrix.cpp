@@ -33,7 +33,7 @@ AbundanceCorrectionMatrix::AbundanceCorrectionMatrix (MLClassList& _classes,
                                                       RunLog&      _log
                                                      ):
   classes          (_classes),
-  dateTimeComputed (osGetLocalDateTime ()),
+  dateTimeComputed (KKB::osGetDateTimeLocal ()),
   knownByClass     (NULL),
   numCorrect       (0),
   numPredictions   (0),
@@ -68,7 +68,7 @@ AbundanceCorrectionMatrix::AbundanceCorrectionMatrix (const KKStr&  configFileNa
                                                       RunLog&       _log
                                                      ):
   classes          (),
-  dateTimeComputed (osGetLocalDateTime ()),
+  dateTimeComputed (osGetDateTimeLocal ()),
   knownByClass     (NULL),
   numCorrect       (0),
   numPredictions   (0),

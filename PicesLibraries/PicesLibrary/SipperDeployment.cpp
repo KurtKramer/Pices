@@ -35,7 +35,7 @@ SipperDeployment::SipperDeployment ():
     cropLeft            (0),
     cropRight           (4095)
 {
-  DateTime  currentTime = osGetLocalDateTime ();
+  DateTime  currentTime = osGetDateTimeLocal ();
   dateTimeStart       = currentTime;
   dateTimeEnd         = currentTime;
   syncTimeStampActual = currentTime;

@@ -117,7 +117,7 @@ FrameExtractorThread::FrameExtractorThread (ExtractionParms&                 _pa
 
   if  (sipperBuff == NULL)
   {
-    KKStr msg (100);
+    KKStr msg (100u);
     msg << "FrameExtractorThread  ***ERROR***      *** Could not open SipperFile[" << parms.SipperFileName () << "] ***" << endl << endl;
     _successful = false;
     AddMsg (msg);
@@ -140,7 +140,7 @@ FrameExtractorThread::FrameExtractorThread (ExtractionParms&                 _pa
   if  (parms.ScanLineStart () > 0)
   {
     sipperBuff->SkipToScanLine (parms.ScanLineStart ());
-    KKStr  msg(100);
+    KKStr  msg(100u);
     msg << "FrameExtractorThread    Skipped to scan line[" <<  parms.ScanLineStart () << "]";
     AddMsg (msg);
   }
@@ -547,7 +547,7 @@ void  FrameExtractorThread::Run ()
 
   AddMsg ("FrameExtractorThread::Run  Starting");
 
-  startTime = osGetLocalDateTime ();
+  startTime = osGetDateTimeLocal ();
   endTime   = startTime;
 
   double  startCPUsecs = osGetSystemTimeUsed ();
@@ -588,7 +588,7 @@ void  FrameExtractorThread::Run ()
 
   InstrumentDataFileManager::InitializePop();
 
-  endTime =  osGetLocalDateTime ();
+  endTime =  osGetDateTimeLocal ();
   elaspedTime = endTime - startTime;
 
   AddMsg ("FrameExtractorThread::Run  Exiting");

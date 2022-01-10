@@ -51,7 +51,7 @@ PortAssignment::PortAssignment (const PortAssignment&  _portAssignment)
      
 KKStr  PortAssignment::HeaderStr ()  const
 {
-  KKStr  s (50);
+  KKStr  s (50u);
   
   s << instrument->ShortName ();
   if  (instrument->Other ())
@@ -163,8 +163,8 @@ void  SipperHeaderRec::InitFields ()
   objective         = "";
   principal         = "";
   researchOrg       = "";
-  cruiseDateStart   = osGetLocalDateTime ().Date ();
-  cruiseDateEnd     = osGetLocalDateTime ().Date ();
+  cruiseDateStart   = osGetDateTimeLocal ().Date ();
+  cruiseDateEnd     = osGetDateTimeLocal ().Date ();
   deploymentVehicle = "";
   seaConditions     = "";
   waveHeight        = "";
@@ -190,7 +190,7 @@ void  SipperHeaderRec::InitFields ()
 KKStr  SipperHeaderRec::HeaderStr ()
 {
   kkuint32  x = 0;
-  KKStr  s (500);
+  KKStr  s (500u);
 
   s << "fn" << "\t" << sipperFileName                   + "\t" 
     << "sr" << "\t" << StrFormatInt (scanRate, "zzzz0") + "\t";

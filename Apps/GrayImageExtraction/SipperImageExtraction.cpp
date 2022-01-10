@@ -1660,7 +1660,7 @@ void  SipperImageExtraction::ExtractFrames ()
 
   DateTime  elaspedTime;
   DateTime  endTime;
-  DateTime  startTime = osGetLocalDateTime ();
+  DateTime  startTime = osGetDateTimeLocal ();
 
   double  startCPUsecs = osGetSystemTimeUsed ();
 
@@ -1739,7 +1739,7 @@ void  SipperImageExtraction::ExtractFrames ()
   double  systemTimeUsed = doneCPUsecs - startCPUsecs;
 
 
-  endTime =  osGetLocalDateTime ();
+  endTime =  osGetDateTimeLocal ();
   elaspedTime = endTime - startTime;
 
   reportFile << endl; 
@@ -1809,7 +1809,7 @@ void  SipperImageExtraction::ExtractFrames ()
     KKStr  depthReportFileName = osRemoveExtension (parms.ReportFileName ()) + "_Depth.txt";
     ofstream depthReport (depthReportFileName.Str ());
     depthReport << "Command Line [" << parms.CmdLine      () << "]" << endl;
-    depthReport << "Date         [" << osGetLocalDateTime () << "]" << endl << endl;
+    depthReport << "Date         [" << osGetDateTimeLocal () << "]" << endl << endl;
     imageManager->ReportStatsByDepth (depthReport, scanLinesPerMeterDepth);
     depthReport.close ();
     delete  scanLinesPerMeterDepth;  scanLinesPerMeterDepth = NULL;

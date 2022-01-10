@@ -21,7 +21,7 @@
     </ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>PicesCommander_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
     <TargetFrameworkProfile />

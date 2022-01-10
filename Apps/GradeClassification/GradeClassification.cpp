@@ -196,7 +196,7 @@ void  GradeClassification::InitalizeApplication (kkint32 argc,
         << "<h1>Run Time Parameters</h1>" << endl
         << "<table align=\"center\" border=\"2\" cellpadding=\"4\">"                             << endl
         << "<caption>Run Time Parameters</caption>" << endl
-        << "<tr><td>Run Time</td>"                << "<td>" << osGetLocalDateTime ()    << "</td></tr>" << endl
+        << "<tr><td>Run Time</td>"                << "<td>" << osGetDateTimeLocal ()    << "</td></tr>" << endl
         << "<tr><td>Ground Truch Directory</td>"  << "<td>" << groundTruthDirName       << "</td></tr>" << endl
         << "<tr><td>Config File Name</td>"        << "<td>" << configFileName           << "</td></tr>" << endl;
  

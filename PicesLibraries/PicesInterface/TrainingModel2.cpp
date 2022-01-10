@@ -310,7 +310,7 @@ void  TrainingModel2::CleanUp ()
 
 void  TrainingModel2::UpdateMemoryPressure ()
 {
-  kkMemSize  newMemoryPressure = 2 * sizeof (bool) + 
+  size_t  newMemoryPressure = 2 * sizeof (bool) + 
                            crossProbTableNumClasses * crossProbTableNumClasses * sizeof (double) +   // crossProbTable
                            crossProbTableNumClasses *  sizeof (double) +                             // probabilities
                            crossProbTableNumClasses *  sizeof (int);                                 // votes
@@ -322,10 +322,10 @@ void  TrainingModel2::UpdateMemoryPressure ()
   if  (trainer  && trainerWeOwn)
     newMemoryPressure += trainer->MemoryConsumedEstimated ();
 
-  if (newMemoryPressure > curMemoryPressure)
+  if  (newMemoryPressure > curMemoryPressure)
     GC::AddMemoryPressure (newMemoryPressure - curMemoryPressure);
 
-  else if (newMemoryPressure < curMemoryPressure)
+  else if  (newMemoryPressure < curMemoryPressure)
     GC::RemoveMemoryPressure (curMemoryPressure - newMemoryPressure);
 
   curMemoryPressure = newMemoryPressure;

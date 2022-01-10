@@ -16,6 +16,7 @@ using namespace std;
 #include "DateTime.h"
 #include "GlobalGoalKeeper.h"
 #include "ImageIO.h"
+#include "Option.h"
 #include "OSservices.h"
 #include "RunLog.h"
 #include "KKStr.h"
@@ -351,7 +352,7 @@ ImageFeaturesListPtr  FeatureFileIOPices::LoadFile (const KKStr&      _fileName,
   eof = false;
   eol = false;
 
-  KKStr field (128);
+  KKStr field (scUINT32 (128));
 
   kkuint32 maxToLoad = _maxCount ? _maxCount.value () : uint32_max;
 
@@ -667,20 +668,20 @@ void   FeatureFileIOPices::SaveFile (FeatureVectorList&     _data,
   {
     // Write out the actual examples.
     ImageFeaturesPtr   example = NULL;
-    for  (kkuint32 idx = 0; idx < examples->QueueSize (); idx++)
+    for  (kkuint32 idx = 0;  idx < examples->QueueSize ();  idx++)
     {
       example = examples->IdxToPtr (idx);
 
-      for  (kkuint32 x = 0; x < _selFeatures.NumOfFeatures (); x++)
+      for  (kkuint32 x = 0;  x < _selFeatures.NumOfFeatures ();  ++x)
       {
-        kkint32  featureNum = _selFeatures[x];
+        const kkint32  featureNum = _selFeatures[x];
         _out << example->FeatureData (featureNum) << "\t";
       }
 
       {
-        kkint32  mlClassIdx = classIdx.GetClassIndex (example->MLClass        ());
-        kkint32  predClassIdx  = classIdx.GetClassIndex (example->PredictedClass ());
-        kkint32  p = (kkint32)_out.precision ();
+        auto  mlClassIdx    = classIdx.GetClassIndex (example->MLClass        ());
+        auto  predClassIdx  = classIdx.GetClassIndex (example->PredictedClass ());
+        const auto  p = _out.precision ();
         _out.precision (11);
         _out << example->MLClassName        () << "\t" 
              << mlClassIdx                     << "\t"
@@ -1447,7 +1448,7 @@ ImageFeaturesListPtr  FeatureFileIOPices::FeatureDataReSink
                             _log
                            );
 
-    _timeStamp = osGetLocalDateTime ();
+    _timeStamp = osGetDateTimeLocal ();
   }
 
   delete  fileNameList;     fileNameList    = NULL;

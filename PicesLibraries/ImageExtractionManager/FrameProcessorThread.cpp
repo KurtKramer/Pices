@@ -159,7 +159,7 @@ void  FrameProcessorThread::ProcessFrame (LogicalFramePtr  frame)
     kkuint32  sipperTopRow = extractedImage->SipperFileScanRow ();
     kkuint32  sipperTopCol = extractedImage->SipperFileScanCol ();
 
-    KKStr  imageFileName (64);
+    KKStr  imageFileName (64u);
     imageFileName << sipperRootName
                   << "_"
                   << StrFormatInt (sipperTopRow, "ZZ00000000")
@@ -294,7 +294,7 @@ void  FrameProcessorThread::LoadClassifier (bool&  _successful)
     else if  (!trainer)
     {
       _successful = false;
-      KKStr  msg (100);
+      KKStr  msg (100u);
       msg << "FrameProcessorThread::LoadClassifier    ***ERROR***  TrainingProcess  failed to load;  ConfigFileName[" << parms.ConfigFileName () << "].";
       AddMsg (msg);
     }
@@ -302,7 +302,7 @@ void  FrameProcessorThread::LoadClassifier (bool&  _successful)
     else if  (trainer->Abort ())
     {
       _successful = false;
-      KKStr  msg (100);
+      KKStr  msg (100u);
       msg << "FrameProcessorThread::LoadClassifier    ***ERROR***  Building Classifier for ConfigFileName[" << parms.ConfigFileName () << "].";
       AddMsg (msg);
     }

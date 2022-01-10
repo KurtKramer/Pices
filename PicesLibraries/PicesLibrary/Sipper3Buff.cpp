@@ -532,7 +532,7 @@ void  Sipper3Buff::ExtractSipperHeaderInfo ()
 
   rewind (inFile);
 
-  KKStr  headerStr (500);  // PreAllocated 500 characters.
+  KKStr  headerStr (500u);  // PreAllocated 500 characters.
 
 
   // The header info should be the first bytes written to the file.  These bytes are written

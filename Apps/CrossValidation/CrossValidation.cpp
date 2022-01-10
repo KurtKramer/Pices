@@ -1778,7 +1778,7 @@ void  CrossValidationApp::ValidationProcess ()
   cm.PrintErrorByProb (*report);
   *report << endl << endl << endl;
 
-  endTime = osGetLocalDateTime();
+  endTime = osGetDateTimeLocal();
   DateTime  elapsedTime = endTime - startTime;
 
   *report << "****************************************************************************************"         << endl;
@@ -2216,7 +2216,7 @@ void  CrossValidationApp::WriteABiasMatrix (ConfusionMatrix2&  cm)
   
   f << "<BiasMatrix>"                                                             << endl
     << "FileName"            << "\t" << biasFileName                              << endl
-    << "DateTime"            << "\t" << osGetLocalDateTime ()                     << endl
+    << "DateTime"            << "\t" << osGetDateTimeLocal ()                     << endl
     << "ConfigFileName"      << "\t" << config->FileName   ()                     << endl
     << "ConfigFileDateTime"  << "\t" << osGetFileDateTime  (config->FileName ())  << endl
     << endl;
@@ -2326,7 +2326,7 @@ int  CrossValidationApp::Main (int  argc,  char** argv)
 
   logLossCount = 0;
   logLossTotal = 0.0;
-  startTime = osGetLocalDateTime ();
+  startTime = osGetDateTimeLocal ();
 
   *report << "Start Time[" << startTime << "]." << endl << endl;
 
@@ -2594,7 +2594,7 @@ int  CrossValidationApp::Main (int  argc,  char** argv)
 
   *report << endl << endl;
 
-  DateTime  endTime     = osGetLocalDateTime ();
+  DateTime  endTime     = osGetDateTimeLocal ();
   DateTime  elapsedTime = endTime - startTime;
 
   double   userTimeUsed   = osGetUserTimeUsed   ();

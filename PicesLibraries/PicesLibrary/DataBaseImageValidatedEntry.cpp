@@ -135,7 +135,7 @@ void  DataBaseImageValidatedEntryList::Save (const KKStr&  _fileName,
     return;
   }
 
-  dateWritten = osGetLocalDateTime ();
+  dateWritten = osGetDateTimeLocal ();
   fileName    = _fileName;
   hostName    = osGetHostName ().value_or ("*** UNKNOWN ***");
 

@@ -32,9 +32,9 @@ using namespace MLL;
 CTD_Plus_Data::CTD_Plus_Data (bool  _checkCDOM):
 
     batteryVoltage         (0.0f),
-    checkCDOM              (false),
+    checkCDOM              (_checkCDOM),
     conductivity           (0.0f),
-    date                   (_checkCDOM),
+    date                   (),
     density                (0.0f),
     depthMeters            (0.0f),
     fluorescence           (0.0f),
@@ -650,7 +650,7 @@ KKStr  CTD_Plus_Data::Header2Str ()
 
 KKStr  CTD_Plus_Data::ToStrNoLabels ()  const
 {
-  KKStr  result (100);
+  KKStr  result (100u);
 
   result << date                                                << "\t"
          << StrFormatDouble (batteryVoltage,         "##0.000") << "\t"

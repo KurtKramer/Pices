@@ -53,9 +53,9 @@ ExtractedImage::~ExtractedImage ()
 
 
 
-kkMemSize ExtractedImage::MemoryConsumedEstimated ()  const
+size_t ExtractedImage::MemoryConsumedEstimated ()  const
 {
-  kkMemSize  m = sizeof (*this);
+  size_t  m = sizeof (*this);
   if  (image)
     m += image->MemoryConsumedEstimated ();
 
@@ -136,10 +136,10 @@ ExtractedImageQueue::~ExtractedImageQueue ()
 
 
 
-kkMemSize  ExtractedImageQueue::MemoryConsumedEstimated ()  const
+size_t  ExtractedImageQueue::MemoryConsumedEstimated ()  const
 {
   goalie->StartBlock ();
-  kkMemSize  memoryConsumedEstimated = sizeof (*this);
+  size_t  memoryConsumedEstimated = sizeof (*this);
 
   std::deque<ExtractedImagePtr>:: const_iterator idx;
   for  (idx = begin ();  idx != end ();  ++idx)

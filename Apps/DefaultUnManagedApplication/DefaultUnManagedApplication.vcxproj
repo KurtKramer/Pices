@@ -76,9 +76,8 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <PreBuildEvent>
-      <Command>
-                         copy /Y "$(OutsidePackages)\fftw-3.3.5-dll64\*.dll"   "$(SolutionDir)$(Platform)\$(Configuration)\"
-                         copy /Y "$(OutsidePackages)\MySQL\MySQL Connector C 6.1\lib\libmysql.dll"   "$(SolutionDir)$(Platform)\$(Configuration)\"</Command>
+      <Command>copy /Y "$(OutsidePackages)\fftw-3.3.5-dll64\*.dll"   "$(SolutionDir)$(Platform)\$(Configuration)\"
+copy /Y $(OutsidePackages)"\MySQL\mysql-connector-c-6.1.6-win32\lib\"*.dll     $(SolutionDir)$(Platform)\$(Configuration)\</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -103,9 +102,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
     </Link>
     <PreBuildEvent>
-      <Command>
-                         copy /Y "$(OutsidePackages)\fftw-3.3.5-dll64\*.dll"   "$(SolutionDir)$(Platform)\$(Configuration)\"
-                         copy /Y "$(OutsidePackages)\MySQL\MySQL Connector C 6.1\lib\libmysql.dll"   "$(SolutionDir)$(Platform)\$(Configuration)\"</Command>
+      <Command>copy /Y "$(OutsidePackages)\fftw-3.3.5-dll64\*.dll"   "$(SolutionDir)$(Platform)\$(Configuration)\"
+copy /Y $(OutsidePackages)"\MySQL\mysql-connector-c-6.1.6-win32\lib\"*.dll     $(SolutionDir)$(Platform)\$(Configuration)\</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -87,7 +87,7 @@ InstrumentData::InstrumentData (      KKStrParser&  line,
 
   kkuint32  n = (kkuint32)fieldIndirections.size ();
 
-  KKStr  field (64);
+  KKStr  field (scUINT32 (64));
   kkuint32  x = 0;
   for  (x = 0;  x < n;  x++)
   {
@@ -623,7 +623,7 @@ KKStr  InstrumentData::ToTabDelStr ()  const
 {
   kkint32  x = 0;
 
-  KKStr  ln (200);
+  KKStr  ln (scUINT32 (200));
 
   for  (x = 0;  x < NumFields ();  x++)
   {

@@ -25,7 +25,7 @@ SipperStation::SipperStation ():
     description    (),
     latitude       (0),
     longitude      (0),
-    dateTimeStart  (osGetLocalDateTime ())
+    dateTimeStart  (osGetDateTimeLocal ())
 {
 
 }

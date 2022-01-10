@@ -375,9 +375,9 @@ ImageFeatures::~ImageFeatures ()
 }
 
 
-kkMemSize  ImageFeatures::MemoryConsumedEstimated ()  const
+size_t  ImageFeatures::MemoryConsumedEstimated ()  const
 {
-  kkMemSize  memoryConsumedEstimated = FeatureVector::MemoryConsumedEstimated () 
+  size_t  memoryConsumedEstimated = FeatureVector::MemoryConsumedEstimated () 
     +  sizeof (float)   * 3
     +  sizeof (double)  * 3
     +  sizeof (kkint32)   * 1
@@ -882,7 +882,7 @@ void  ImageFeatures::CalcFeatures (RasterSipper&        srcRaster,
 
     if  (!ExampleFileName ().Empty ())
     {
-      KKStr  sipperFileName (30);
+      KKStr  sipperFileName (scUINT32 (30));
       kkuint32 scanLineNum = 0;
       kkuint32 scanColNum  = 0;
 
@@ -1190,7 +1190,7 @@ ImageFeaturesList::ImageFeaturesList (const FeatureVectorList&  featureVectorLis
       else
       {
         // ****    ERROR  ****
-        KKStr  msg (200);
+        KKStr  msg (scUINT32 (200));
         msg << "ImageFeaturesList Copy Constructor for FeatureVectorList  Example[" <<  featureVector->ExampleFileName () 
             << "] does not have a underlying type of 'ImageFeatures'.";
         cerr << endl << msg << endl;
@@ -1267,7 +1267,7 @@ ImageFeaturesList::ImageFeaturesList (const FeatureVectorList&  featureVectorLis
       else
       {
         // ****    ERROR  ****
-        KKStr  errMsg (128);
+        KKStr  errMsg (scUINT32 (128));
         errMsg << "ImageFeaturesList ::ImageFeaturesList  ***ERROR***   Elements in 'featureVectorList' is not of 'ImageFeatures'  type;   FileName[" << featureVector->ExampleFileName () << "]";
         cerr << endl << errMsg << endl << endl;
         throw KKException (errMsg);
@@ -1449,7 +1449,7 @@ void   ImageFeaturesList::FeatureExtraction (const KKStr&  _dirName,
 
     if  (!image)
     {
-      KKStr  msg (100);
+      KKStr  msg (scUINT32 (100));
       msg  << "ImageFeaturesList::FeatureExtraction  ***ERROR***, FeatureExtraction Could not Allocate Space for ImageFeatures object.";
       cerr << endl << endl << msg << endl << endl;
       osDisplayWarning (msg);

@@ -2706,7 +2706,7 @@ void  FeatureSelection::FinalReport ()
   r << "<h1>Run Time Parameters</h1>" << endl
     << "<table align=\"center\" border=\"2\" cellpadding=\"4\">"            << endl
     << "  <caption>" << "Run Time Parameters" << "</caption>" << endl
-    << "  <tr><td>Run Time</td>"               << "<td>" << osGetLocalDateTime ()                         << "</td></tr>" << endl
+    << "  <tr><td>Run Time</td>"               << "<td>" << osGetDateTimeLocal ()                         << "</td></tr>" << endl
     << "  <tr><td>Train File</td>"             << "<td>" << trainingDataFileName                          << "</td></tr>" << endl
     << "  <tr><td>Test  File</td>"             << "<td>" << testDataFileName                              << "</td></tr>" << endl
     << "  <tr><td>Validation File</td>"        << "<td>" << validationDataFileName                        << "</td></tr>" << endl

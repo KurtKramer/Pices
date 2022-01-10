@@ -139,7 +139,7 @@ namespace  PicesInterface
 
   void  PicesTrainingConfigManaged::AdjustCurMemoryPressure ()
   {
-    kkMemSize  newMemoryPressure = 0;
+    size_t  newMemoryPressure = 0;
     if  (config)   newMemoryPressure += config->MemoryConsumedEstimated ();
     if  (classes)  newMemoryPressure += classes->MemoryConsumedEstimated ();
 

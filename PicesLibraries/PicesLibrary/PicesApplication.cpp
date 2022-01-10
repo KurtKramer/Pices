@@ -291,7 +291,7 @@ void  PicesApplication::PrintStandardHeaderInfo (ostream&  o)
 {
   o << "Application:"     << "\t" << ApplicationName    () << endl;
   o << "Build Date/Time"  << "\t" << BuildDate          () << endl;
-  o << "Run Date/Time"    << "\t" << osGetLocalDateTime () << endl; 
+  o << "Run Date/Time"    << "\t" << osGetDateTimeLocal () << endl; 
   o << "Host Name"        << "\t" << osGetHostName ().value_or ("*** UNKNOWN ***") << endl;
   o << "User Name"        << "\t" << osGetUserName      () << endl;
   if  (db)

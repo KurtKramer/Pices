@@ -334,7 +334,7 @@ void   MergeFeatureFiles::Main ()
   {
     if  (randomize)
     {
-      DateTime  dt = osGetLocalDateTime ();
+      DateTime  dt = osGetDateTimeLocal ();
       srcData->RandomizeOrder (dt.Seconds ());
       srcData->RandomizeOrder ();
     }

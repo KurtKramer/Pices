@@ -123,7 +123,7 @@ void   ReFreshInstrumentData::Main ()
   if  (Abort ())
     return;
 
-  DateTime  runDate = osGetLocalDateTime ();
+  DateTime  runDate = osGetDateTimeLocal ();
 
   KKStr reportFileDir = osAddSlash (PicesVariables::ReportDir ()) + "ReFreshInstrumentData";
   osCreateDirectoryPath (reportFileDir);
@@ -185,7 +185,7 @@ void   ReFreshInstrumentData::Main ()
     }
 
     log.Level (10) << " " << sipperFileNum << " of " << numSipperFiles << "  File [" << sf->SipperFileName () << "]" << endl;
-    r << osGetLocalDateTime () << "\t" << sf->SipperFileName () << "\t" << fullSipperFileName << endl;
+    r << osGetDateTimeLocal () << "\t" << sf->SipperFileName () << "\t" << fullSipperFileName << endl;
     DB ()->InstrumentDataReFreshSipperFile (sf->SipperFileName (), cancelFlag, msgBuff, sizeof (msgBuff));
   }
 

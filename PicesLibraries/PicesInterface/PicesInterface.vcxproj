@@ -22,7 +22,7 @@
     <ProjectGuid>{8F609A95-37BC-4E0F-8CD5-4196A86CD4B8}</ProjectGuid>
     <RootNamespace>PicesInterface</RootNamespace>
     <Keyword>ManagedCProj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -82,7 +82,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>true</CLRSupport>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -95,7 +95,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>true</CLRSupport>
   </PropertyGroup>
@@ -166,8 +166,11 @@
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
     </Xdcmake>
     <PreBuildEvent>
-      <Command>copy /Y $(OutsidePackages)"\MySQL\mysql-connector-c-6.1.6-win32\lib\"*.dll  $(SolutionDir)$(Configuration)\
-copy $(OutsidePackages)"\fftw-3.3.5-dll64\"*.dll  $(SolutionDir)$(Configuration)\</Command>
+      <Command>echo "*********************************************************************************************"
+echo "Copy to:"
+echo $(SolutionDir)$(Platform)\$(Configuration)\
+copy /Y $(OutsidePackages)"\MySQL\mysql-connector-c-6.1.6-win32\lib\"*.dll     $(SolutionDir)$(Platform)\$(Configuration)\
+copy $(OutsidePackages)"\fftw-3.3.5-dll64\"*.dll    $(SolutionDir)$(Platform)\$(Configuration)\</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -203,7 +206,8 @@ copy $(OutsidePackages)"\fftw-3.3.5-dll64\"*.dll  $(SolutionDir)$(Configuration)
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
     </Xdcmake>
     <PreLinkEvent>
-      <Command>copy $(OutsidePackages)"\MySQL\MySQL Connector C 6.1\lib\"*.dll  $(SolutionDir)$(Configuration)\</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
     <CustomBuildStep>
       <Command>copy $(OutsidePackages)"\MySQL\MySQL Connector C 6.1\lib\"*.dll  $(TargetPath)
@@ -234,8 +238,8 @@ copy $(OutsidePackages)"\fftw-3.3.5-dll64\"*.dll  $(SolutionDir)$(Configuration)
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
     </Xdcmake>
     <PreBuildEvent>
-      <Command>copy $(OutsidePackages)"\MySQL\mysql-connector-c-6.1.6-win32\lib\"*.dll  $(TargetPath)
-copy $(OutsidePackages)"\fftw-3.3.5-dll64\"*.dll  $(TargetPath)</Command>
+      <Command>copy /Y $(OutsidePackages)"\MySQL\mysql-connector-c-6.1.6-win32\lib\"*.dll     $(SolutionDir)$(Platform)\$(Configuration)\
+copy $(OutsidePackages)"\fftw-3.3.5-dll64\"*.dll    $(SolutionDir)$(Platform)\$(Configuration)\</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
