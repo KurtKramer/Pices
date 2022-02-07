@@ -20,4 +20,5 @@ rem Install root Dasani40!  pices_new  localhost  3306  utf8
 rem Install root Dasani40!  kaggle  localhost  3306  utf8
 rem Install kkramer Dasani40!  pices_new  localhost   3306  utf8
 rem Install kkramer Dasani40!  pices_iec  localhost   3306  latin1
-Install kkramer tree10peach  pices_iec  localhost   3306  latin1
+rem Install kkramer tree10peach  pices_iec  localhost   3306  latin1
+Install root dasani20  oceanspace  localhost   3306  latin1
